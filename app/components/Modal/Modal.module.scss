@@ -1,0 +1,42 @@
+.modal {
+	position: relative;
+	width: min(90vw, 600px);
+	max-height: 85vh;
+	padding: 3rem;
+	border: none;
+	border-radius: 0.75rem;
+	background: #fff;
+	color: #262626;
+	box-shadow: 0 20px 60px rgb(0 0 0 / 15%);
+
+	&::backdrop {
+		background: rgb(0 0 0 / 60%);
+	}
+
+	h2 {
+		margin: 0;
+		padding-right: 2rem;
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+}
+
+.close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	border: none;
+	background: transparent;
+	font-size: 2rem;
+	line-height: 1;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 4px;
+	}
+}

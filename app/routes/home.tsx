@@ -1,13 +1,23 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import CardList from "../components/CardList/CardList";
+import Intro from "../components/Intro/Intro";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+	return [
+		{ title: "Todd Miller's Portfolio" },
+		{
+			name: "description",
+			content:
+				"Todd H. Miller, the world famous web developer, presents his personal porfolio page.",
+		},
+	];
 }
 
 export default function Home() {
-  return <Welcome />;
+	return (
+		<main className="home">
+			<Intro />
+			<CardList />
+		</main>
+	);
 }

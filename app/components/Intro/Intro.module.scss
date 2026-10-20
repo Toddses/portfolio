@@ -1,0 +1,20 @@
+@use "../../styles" as s;
+
+.intro {
+	max-width: 900px;
+
+	h1 {
+		margin: 0 0 1.5rem;
+		/*font-size: clamp(2.5rem, 5vw, 5rem);
+		font-weight: 700;
+		line-height: 1.1;
+		letter-spacing: -0.04em;*/
+	}
+
+	p {
+		max-width: 700px;
+		margin: 0;
+		font-size: clamp(1rem, 1.5vw, 1.25rem);
+		line-height: 1.7;
+	}
+}

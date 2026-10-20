@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+@use "sass:math";
+
+/// Provides a one line, value only method to output a full
+/// set of font styling in REM. REM calculations are all
+/// based on a 16px font base.
+///
+/// @argument {number} $font-size
+///   Pixel value for the size of the font
+///
+/// @argument {number | string (normal)} $line-height [normal]
+///   Pixel value for the line height, or 'normal' is allowed.
+///
+/// @argument {number | string (normal)} $letter-spacing [normal]
+///   Pixel value for the letter spacing, or 'normal' is allowed.
+///
+/// @argument {number | string} $font-weight [normal]
+///   Font weight value. Can be the number or allowed keywords.
+///
+/// @example scss
+///   .copy {
+///     @include fontstyle(18, 22, 0.3);
+///   }
+///
+///   // CSS Output
+///   .copy {
+///     font-size: 1.125rem;
+///     line-height: 1.22222;
+///     letter-spacing: 0.01667em;
+///     font-weight: normal;
+///   }
+///
+/// @example scss
+///   .copy {
+///     @include fontstyle(24, 32, 0.6, bold);
+///   }
+///
+///   // CSS Output
+///   .copy {
+///     font-size: 1.5rem;
+///     line-height: 1.33333;
+///     letter-spacing: 0.025em;
+///     font-weight: bold;
+///   }
+///
+/// @example scss
+///   .copy {
+///     @include fontstyle(10);
+///   }
+///
+///   // CSS Output
+///   .copy {
+///     font-size: 0.625rem;
+///     line-height: normal;
+///     letter-spacing: normal;
+///     font-weight: normal;
+///   }
+///
+/// @example scss
+///   .copy {
+///     @include fontstyle(16, $letter-spacing: 0.2);
+///   }
+///
+///   // CSS Output
+///   .copy {
+///     font-size: 1rem;
+///     line-height: normal;
+///     letter-spacing: 0.0125em;
+///     font-weight: normal;
+///   }
+
+@mixin fontstyle(
+	$font-size,
+	$line-height: normal,
+	$letter-spacing: normal,
+	$font-weight: normal
+) {
+	// 1rem = 16px. Somehow the math here works out.
+	font-size: $font-size * 0.0625rem;
+
+	@if $line-height==normal {
+		line-height: normal;
+	} @else {
+		line-height: math.div($line-height, $font-size);
+	}
+
+	@if $letter-spacing==normal {
+		letter-spacing: normal;
+	} @else {
+		letter-spacing: #{math.div($letter-spacing, $font-size)}em;
+	}
+
+	@if $font-weight==normal {
+		font-weight: normal;
+	} @else {
+		font-weight: $font-weight;
+	}
+}
