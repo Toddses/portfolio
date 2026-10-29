@@ -1,0 +1,41 @@
+.link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+
+	color: var(--color-accent);
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+
+	transition: color 200ms ease-out;
+
+	&:hover {
+		color: var(--color-accent-hover);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 4px;
+	}
+}
+
+.icon {
+	display: block;
+	width: 0.75rem;
+	height: 0.75rem;
+	flex-shrink: 0;
+	background-color: currentColor;
+
+	mask-image: var(--icon-url);
+	mask-position: center;
+	mask-size: contain;
+	mask-repeat: no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.link {
+		transition: none;
+	}
+}

@@ -1,0 +1,18 @@
+.workHistory {
+	width: 100%;
+	max-width: 1100px;
+	margin-top: 6rem;
+}
+
+.heading {
+	margin: 0 0 3rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+}

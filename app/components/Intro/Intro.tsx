@@ -2,8 +2,8 @@ import styles from "./Intro.module.scss";
 
 export default function Intro() {
 	return (
-		<section className="intro">
-			<h1>Todd Miller's Portfolio</h1>
+		<section className={styles.intro}>
+			<h1>Todd Miller is a Web Developer.</h1>
 
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod

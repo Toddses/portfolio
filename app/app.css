@@ -1,7 +1,7 @@
 :root {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #262626;
-	background-color: #ede0d3;
+	font-family: Manrope;
+	color: var(--color-text);
+	background-color: var(--color-background);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;

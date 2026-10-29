@@ -1,10 +1,12 @@
 import type { Route } from "./+types/home";
-import CardList from "../components/CardList/CardList";
 import Intro from "../components/Intro/Intro";
+import ProjectCardList from "../components/ProjectCardList/ProjectCardList";
+//import TechnicalExpertise from "../components/TechnicalExpertise/TechnicalExpertise";
+import WorkHistory from "../components/WorkHistory/WorkHistory";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "Todd Miller's Portfolio" },
+		{ title: "Todd Miller, Web Developer" },
 		{
 			name: "description",
 			content:
@@ -17,7 +19,8 @@ export default function Home() {
 	return (
 		<main className="home">
 			<Intro />
-			<CardList />
+			<ProjectCardList />
+			<WorkHistory />
 		</main>
 	);
 }

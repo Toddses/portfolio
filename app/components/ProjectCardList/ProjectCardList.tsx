@@ -3,19 +3,25 @@ import { useState } from "react";
 import type { Project } from "../../types/Project";
 import { projects } from "../../data/projects";
 
-import Card from "../Card/Card";
-import Modal from "../Modal/Modal";
+import ProjectCard from "../ProjectCard/ProjectCard";
+import ProjectModal from "../ProjectModal/ProjectModal";
 
-import styles from "./CardList.module.scss";
+import styles from "./ProjectCardList.module.scss";
 
-export default function CardList() {
+export default function ProjectCardList() {
 	const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
 	return (
 		<section className={styles.cardList}>
+			<div className={styles.header}>
+				<span className={styles.eyebrow}>Portfolio</span>
+
+				<h2 id="project-list-heading">Things I've Done.</h2>
+			</div>
+
 			<div className={styles.grid}>
 				{projects.map((project) => (
-					<Card
+					<ProjectCard
 						key={project.id}
 						project={project}
 						onMoreInfo={setSelectedProject}
@@ -23,9 +29,8 @@ export default function CardList() {
 				))}
 			</div>
 
-			<Modal
-				title={selectedProject?.title ?? ""}
-				isOpen={selectedProject !== null}
+			<ProjectModal
+				project={selectedProject}
 				onClose={() => setSelectedProject(null)}
 			/>
 		</section>
