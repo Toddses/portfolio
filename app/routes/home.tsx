@@ -2,7 +2,9 @@ import type { Route } from "./+types/home";
 import Intro from "../components/Intro/Intro";
 import ProjectCardList from "../components/ProjectCardList/ProjectCardList";
 //import TechnicalExpertise from "../components/TechnicalExpertise/TechnicalExpertise";
-import WorkHistory from "../components/WorkHistory/WorkHistory";
+//import WorkHistory from "../components/WorkHistory/WorkHistory";
+import OpenSource from "../components/OpenSource/OpenSource";
+import Contact from "../components/Contact/Contact";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -20,7 +22,8 @@ export default function Home() {
 		<main className="home">
 			<Intro />
 			<ProjectCardList />
-			<WorkHistory />
+			<OpenSource />
+			<Contact />
 		</main>
 	);
 }

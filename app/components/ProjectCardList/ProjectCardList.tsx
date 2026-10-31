@@ -13,26 +13,28 @@ export default function ProjectCardList() {
 
 	return (
 		<section className={styles.cardList}>
-			<div className={styles.header}>
-				<span className={styles.eyebrow}>Portfolio</span>
+			<div className="inner">
+				<div className={styles.header}>
+					<span className={styles.eyebrow}>Portfolio</span>
 
-				<h2 id="project-list-heading">Things I've Done.</h2>
+					<h2 id="project-list-heading">Things I've Done.</h2>
+				</div>
+
+				<div className={styles.grid}>
+					{projects.map((project) => (
+						<ProjectCard
+							key={project.id}
+							project={project}
+							onMoreInfo={setSelectedProject}
+						/>
+					))}
+				</div>
+
+				<ProjectModal
+					project={selectedProject}
+					onClose={() => setSelectedProject(null)}
+				/>
 			</div>
-
-			<div className={styles.grid}>
-				{projects.map((project) => (
-					<ProjectCard
-						key={project.id}
-						project={project}
-						onMoreInfo={setSelectedProject}
-					/>
-				))}
-			</div>
-
-			<ProjectModal
-				project={selectedProject}
-				onClose={() => setSelectedProject(null)}
-			/>
 		</section>
 	);
 }

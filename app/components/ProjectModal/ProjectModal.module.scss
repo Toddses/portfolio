@@ -95,6 +95,10 @@
 		font-size: 0.95rem;
 		line-height: 1.75;
 	}
+
+	p + p {
+		margin-top: 1rem;
+	}
 }
 
 // ========================================
@@ -225,8 +229,7 @@
 	}
 
 	.media {
-		padding: clamp(3.5rem, 5vw, 5rem) clamp(1.5rem, 4vw, 3rem)
-			clamp(2rem, 3vw, 3rem);
+		padding: 3.5rem clamp(1rem, 2vw, 2rem) 2rem;
 	}
 
 	.content {
@@ -254,6 +257,7 @@
 
 	.media {
 		align-self: stretch;
+		padding: 1rem 0 1rem;
 	}
 
 	.details {

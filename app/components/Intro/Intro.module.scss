@@ -14,4 +14,8 @@
 		font-size: clamp(1rem, 1.5vw, 1.25rem);
 		line-height: 1.7;
 	}
+
+	p + p {
+		margin-top: 1rem;
+	}
 }

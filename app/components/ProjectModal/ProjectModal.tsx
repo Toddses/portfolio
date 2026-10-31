@@ -75,14 +75,22 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
 							<div className={styles.details}>
 								<div className={styles.section}>
-									{project.type === "app" && <h3>Overview</h3>}
-									<p>{project.description}</p>
+									<h3>Overview</h3>
+									{project.description
+										.split(/\n\s*\n/)
+										.map((paragraph, index) => (
+											<p key={index}>{paragraph.trim()}</p>
+										))}
 								</div>
 
 								{project.contribution && (
 									<div className={styles.section}>
 										<h3>My Contribution</h3>
-										<p>{project.contribution}</p>
+										{project.contribution
+											.split(/\n\s*\n/)
+											.map((paragraph, index) => (
+												<p key={index}>{paragraph.trim()}</p>
+											))}
 									</div>
 								)}
 							</div>
