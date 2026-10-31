@@ -16,7 +16,6 @@ export const projects = [
 		technologies: ["React", "Typescript", "PHP", "Drupal", "REST API"],
 
 		website: "https://virtualplant.flowserve.com",
-		github: "https://www.github.com/Toddses",
 
 		images: [
 			{
